@@ -1,0 +1,11 @@
+openai>=1.0.0
+streamlit>=1.28.0
+psycopg2-binary
+python-dotenv
+sentence-transformers>=2.2.0
+peewee
+pdftotext
+pgvector
+pydantic
+rank_bm25
+numpy

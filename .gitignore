@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.env
+.venv
+*.egg-info/
+dist/
+build/
+
+# Streamlit
+.streamlit/secrets.toml
+.streamlit/cache/
+
+# Database & vector cache
+*.db
+*.sqlite
+*.sqlite3
+bm25_cache.pkl
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Logs & temp files
+*.log
+*.pid
+*.tmp
+
+# Environment variables (CRITICAL – never commit)
+.env
+.env.local
+.env.*.local
+
+# Uploaded documents (if you store them locally – not needed, your PDFs go to DB)
+uploads/
+temp/
