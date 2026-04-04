@@ -7,6 +7,8 @@ A Streamlit-based RAG (Retrieval-Augmented Generation) application that lets you
 - Hybrid search – vector similarity + BM25 keyword search
 - Reranking with Cross-Encoder for better accuracy
 - Conversation history of user
+- Document tagging and filtering
+- Support for multiple documents – query across all uploaded PDFs
 
 ## 🧠 Tech Stack
 - **Frontend**: Streamlit
