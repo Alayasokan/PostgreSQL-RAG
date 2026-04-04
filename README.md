@@ -6,9 +6,7 @@ A Streamlit-based RAG (Retrieval-Augmented Generation) application that lets you
 - Upload PDFs – automatic chunking, embedding, and storage
 - Hybrid search – vector similarity + BM25 keyword search
 - Reranking with Cross-Encoder for better accuracy
-- Conversation history per user
-- Section‑specific queries (e.g., "What is Section 62?")
-- Follow‑up question support (summarize, elaborate, etc.)
+- Conversation history of user
 
 ## 🧠 Tech Stack
 - **Frontend**: Streamlit
