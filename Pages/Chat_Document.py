@@ -18,10 +18,10 @@ st.title("Chat With Documents")
 
 # ========== Configuration ==========
 USE_HYBRID_SEARCH = os.getenv("USE_HYBRID_SEARCH", "true").lower() == "true"
-MAX_CONTEXT_CHARS = 6000          # Increased to allow more story context
+MAX_CONTEXT_CHARS = 8000          # Increased to allow more story context
 CANDIDATE_LIMIT = 20              # Increased from 10
 TOP_K_RESULTS = 5                 # Increased from 3
-SIMILARITY_THRESHOLD = 0.55       # Lowered from 0.65 to catch more relevant chunks
+SIMILARITY_THRESHOLD = 0.65       # Lowered from 0.65 to catch more relevant chunks
 # ===================================
 
 # ========== Greeting responses ==========
