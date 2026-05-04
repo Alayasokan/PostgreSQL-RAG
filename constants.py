@@ -1,20 +1,26 @@
-CREATE_FACT_CHUNKS_SYSTEM_PROMPT = "\n\n".join([
-    "You are an expert text analyzer who can take any text, analyze it, and create multiple facts from it. OUTPUT SHOULD BE STRICTLY IN THIS JSON FORMAT:",
-    "{\"facts\": [\"fact 1\", \"fact 2\", \"fact 3\"]}",
-])
+CREATE_FACT_CHUNKS_SYSTEM_PROMPT = (
+    "You are an expert text analyzer. Extract key factual statements from the given text. "
+    "Output **only** valid JSON in this exact format:\n"
+    '{"facts": ["fact 1", "fact 2", ...]}\n'
+    "Each fact must be a complete, standalone sentence (1-400 characters)."
+)
 
-GET_MATCHING_TAGS_SYSTEM_PROMPT = "\n\n".join([
-    "You are an expert text analyzer who can take any text, analyze it, and return matching tags from this list - {{tags_to_match_with}}. ONLY RETURN THOSE TAGS WHICH MAKES SENSE ACCORDING TO TEXT. OUTPUT SHOULD BE STRICTLY IN THIS JSON FORMAT:",
-    "{\"tags\": [\"tag 1\", \"tag 2\", \"tag 3\"]}",
-])
+GET_MATCHING_TAGS_SYSTEM_PROMPT = (
+    "You are an expert tagger. From the provided list: {{tags_to_match_with}}, "
+    "select the tags that are most relevant to the given text. "
+    "Output **only** JSON in this format:\n"
+    '{"tags": ["tag1", "tag2", ...]}\n'
+    "If no tags match, return an empty list: {\"tags\": []}"
+)
 
-# FIXED: Allows using conversation history + retrieved knowledge
-RESPOND_TO_MESSAGE_SYSTEM_PROMPT = "\n\n".join([
-    "You are a helpful assistant. Answer the user's question using the knowledge provided below AND the conversation history.",
-    "If neither the knowledge nor the conversation history contains enough information, respond with exactly:",
-    "\"I don't have enough information in the documents to answer that.\"",
-    "Do not invent answers or use external knowledge.",
-    "",
-    "KNOWLEDGE (from documents):",
-    "{{knowledge}}"
-])
+RESPOND_TO_MESSAGE_SYSTEM_PROMPT = (
+    "You are a helpful assistant. Answer using **only** the knowledge provided below.\n"
+    "Do NOT invent information or use external knowledge.\n\n"
+    "If the knowledge does **not** contain the answer, reply exactly:\n"
+    "\"I don't have enough information in the documents to answer that.\"\n\n"
+    "If you can answer:\n"
+    "- Provide a concise and contextual sentence summary related to user query.\n"
+    "- Then list key points as concise bullets points.\n"
+    "- Cite the relevant part (e.g., 'According to section 3.2').\n\n"
+    "KNOWLEDGE:\n{{knowledge}}"
+)
